@@ -23,12 +23,14 @@ const UserLoginPage = ({ navigation }) => {
       const data = await response.json();
 
       if (response.ok) {
+        const { userId, token } = data;
         Alert.alert('Success', data.message);
         // Store token and navigate to another page
+        await AsyncStorage.setItem('userId', userId.toString());
         await AsyncStorage.setItem('token', data.token);
-        navigation.navigate('SubmitFormData');
+        navigation.navigate('Dashboard');
       } else {
-        Alert.alert('Error', data.message);
+        Alert.alert('Login failed:', data.message);
       }
     } catch (error) {
       console.error('Error:', error);

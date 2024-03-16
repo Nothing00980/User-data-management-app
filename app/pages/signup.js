@@ -34,6 +34,11 @@ const UserSignupPage = ({ navigation }) => {
     }
   };
 
+  const divertloginpage = ()=>{
+    navigation.navigate('Login'); // if already signedup.
+
+  };
+
   return (
     <View>
       <Text>Email:</Text>
@@ -43,6 +48,8 @@ const UserSignupPage = ({ navigation }) => {
       <Text>Password:</Text>
       <TextInput value={password} onChangeText={setPassword} secureTextEntry={true} />
       <Button title="Signup" onPress={handleSignup} />
+      <Text>Already signedup </Text>
+      <Button title="login" onPress={divertloginpage} />
     </View>
   );
 };

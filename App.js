@@ -6,6 +6,7 @@ import UserLoginPage from './app/pages/login';
 import UserSignupPage from './app/pages/signup';
 import SubmitFormDataPage from './app/pages/submitformdata';
 import RetrieveDataPage from './app/pages/retreivedata';
+import Dashboard from './app/pages/dashboard';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ export default function App() {
     <Stack.Navigator>
       <Stack.Screen name="SignUp" component={UserSignupPage} />
       <Stack.Screen name="Login" component={UserLoginPage} />
+      <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen name="SubmitFormData" component={SubmitFormDataPage} />
       <Stack.Screen name="RetrieveData" component={RetrieveDataPage} />
     </Stack.Navigator>
